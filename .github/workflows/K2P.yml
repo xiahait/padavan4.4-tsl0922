@@ -34,7 +34,7 @@ jobs:
       - name: Build
         run: |
           make ${{ matrix.target }} TOOLCHAIN=${{ matrix.toolchain }}
-          if [ "${{ matrix.target }}" = "K2P" ]; then
+          if [ "${{ matrix.target }}" = "K2P-NANO" ]; then
             image=$(ls trunk/images/*.trx)
             mv $image $(echo $image | sed 's/K2P/')
           fi
